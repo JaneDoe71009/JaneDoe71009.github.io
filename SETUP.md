@@ -61,7 +61,7 @@ Public visitors see approved content and any nickname chosen by its author. Only
 
 Personal plans are protected by account-level database rules, or are stored only on the current browser while signed out. People using the same browser profile can access its device-local plans. Signing out does not delete device-local plans.
 
-The source includes working approval and access rules, tested in a local PostgreSQL-compatible test database. Live email, hosted database configuration, and public deployment still require account setup and a live launch check. Free service limits may change; [Supabase pricing](https://supabase.com/pricing) currently notes inactivity pauses on free projects. No paid service is required by this source, but email delivery may need another provider.
+The source includes working approval and access rules, tested in a local PostgreSQL-compatible test database. The GitHub Pages deployment and hosted database connection are live; a real multi-account launch check and optional recovery-email delivery setup remain. Free service limits may change; [Supabase pricing](https://supabase.com/pricing) currently notes inactivity pauses on free projects. No paid service is required by this source, but email delivery may need another provider.
 
 ## Development
 
