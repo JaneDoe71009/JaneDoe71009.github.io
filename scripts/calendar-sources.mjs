@@ -3,9 +3,14 @@ import {load} from 'cheerio';
 import {createHash} from 'node:crypto';
 export const districtPage=process.env.SCHOOL_CALENDAR_URL||'';
 export const ibPage='https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/';
+export const ibFallbackSources=[
+ {year:2027,name:'MHS IB',pageUrl:'https://mhsib.weebly.com/uploads/1/3/8/5/138557084/may_2027_final_examination_schedule.pdf',documentUrl:'https://mhsib.weebly.com/uploads/1/3/8/5/138557084/may_2027_final_examination_schedule.pdf'},
+ {year:2027,name:'Gymnázium Šrobárova',pageUrl:'https://www.srobarka.sk/diploma-programme-exam-calendar/',documentUrl:'https://www.srobarka.sk/wp-content/documents/ib-diploma-programme/exams/examination-schedule_2027-05.pdf'},
+ {year:2027,name:'Holy Heart of Mary High School',pageUrl:'https://hhm.nlesd.ca/ib/ib-seniors-info',documentUrl:'https://drive.usercontent.google.com/download?id=1u36Dcf2Xf-WMH_fgMJ7luouwdnv_Sq4M&export=download&confirm=t'}
+];
 const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
 function trustedHosts(){
- const hosts=new Set(['ibo.org','www.ibo.org']);
+ const hosts=new Set(['ibo.org','www.ibo.org',...ibFallbackSources.map(source=>new URL(source.documentUrl).hostname)]);
  if(districtPage)hosts.add(new URL(districtPage).hostname);
  for(const host of (process.env.SCHOOL_CALENDAR_ALLOWED_HOSTS||'').split(','))if(host.trim())hosts.add(host.trim().toLowerCase());
  return hosts;
@@ -65,11 +70,22 @@ export function parseDistrict(lines,years){
  return {events,coverageStart,coverageEnd};
 }
 export function parseExams(lines,year,source){
+ const documentText=lines.join(' ').replace(/\s+/g,' ');
+ if(!new RegExp(`May\\s+${year}\\s+examination schedule`,'i').test(documentText)||!/FINAL VERSION/i.test(documentText)||!/All exam zones/i.test(documentText))throw new Error('The document is not the expected final all-zones IB timetable.');
  const results=new Map();
- for(const line of lines){const m=line.match(/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+(\d{1,2})\s+(April|May|June)\b/i);if(!m)continue;
- const month=months.findIndex(n=>n.toLowerCase()===m[2].toLowerCase())+1,date=iso(year,month,Number(m[1]));
- results.set(date,{id:'ib-may-'+date,title:'IB May examination session',date,kind:'exam',session:'May '+year,official:true,source,note:'Official exam day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator.'});
+ for(const line of lines){const m=line.match(/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+(\d(?:\s*\d)?)\s+(April|May|June)\b/i);if(!m)continue;
+ const month=months.findIndex(n=>n.toLowerCase()===m[2].toLowerCase())+1,date=iso(year,month,Number(m[1].replace(/\s/g,'')));
+ results.set(date,{id:'ib-may-'+date,title:'IB May examination session',date,kind:'exam',session:'May '+year,official:true,source,note:'Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator.'});
  }
  if(results.size<10||results.size>40)throw new Error('The IB timetable format changed; exam dates need review.');
  return [...results.values()].sort((a,b)=>a.date.localeCompare(b.date));
+}
+export const examFingerprint=events=>events.map(event=>event.date).sort().join('|');
+export function chooseExamConsensus(results,minAgreement=2){
+ const usable=results.filter(result=>Array.isArray(result.events));
+ const groups=new Map();
+ for(const result of usable){const key=examFingerprint(result.events),group=groups.get(key)||[];group.push(result);groups.set(key,group);}
+ const agreement=[...groups.values()].sort((a,b)=>b.length-a.length)[0]||[];
+ if(agreement.length<minAgreement)throw new Error('Independent timetable copies do not have a reliable majority match.');
+ return {events:agreement[0].events,agreement,checked:results.length};
 }

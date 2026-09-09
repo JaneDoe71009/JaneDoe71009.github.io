@@ -48,7 +48,7 @@ The public code deliberately does not contain a school or district name, URL, or
 
 The weekly publishing job uses those settings to look for the current school-year calendar, but writes only generic school-calendar wording into the public site. If the school changes its calendar webpage or document host, update those two repository variables.
 
-The calendar refresh retains the last verified dates if a source is unavailable or its format changes. Always confirm exam details with the IB coordinator rather than treating the website as the final authority.
+The calendar refresh retains the last verified dates if a source is unavailable or its format changes. For May 2027, three public IB-school timetable copies are configured in `scripts/calendar-sources.mjs`; at least two must produce exactly the same exam-day list before those dates are published. The calendar page shows each copy used in the check. Always confirm exam details with the IB coordinator rather than treating the website as the final authority.
 
 ## Publish and check an update
 

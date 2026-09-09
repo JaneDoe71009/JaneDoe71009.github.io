@@ -1,6 +1,6 @@
 {
   "schoolYear": "2026-2027",
-  "checkedAt": "2026-09-09T21:49:50.084Z",
+  "checkedAt": "2026-09-09T22:23:29.983Z",
   "coverageStart": "2026-08-24",
   "coverageEnd": "2027-06-04",
   "events": [
@@ -151,6 +151,186 @@
       "kind": "holiday",
       "official": true,
       "note": "Official school calendar"
+    },
+    {
+      "id": "ib-may-2027-04-23",
+      "title": "IB May examination session",
+      "date": "2027-04-23",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-04-26",
+      "title": "IB May examination session",
+      "date": "2027-04-26",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-04-27",
+      "title": "IB May examination session",
+      "date": "2027-04-27",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-04-28",
+      "title": "IB May examination session",
+      "date": "2027-04-28",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-04-29",
+      "title": "IB May examination session",
+      "date": "2027-04-29",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-04-30",
+      "title": "IB May examination session",
+      "date": "2027-04-30",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-03",
+      "title": "IB May examination session",
+      "date": "2027-05-03",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-04",
+      "title": "IB May examination session",
+      "date": "2027-05-04",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-05",
+      "title": "IB May examination session",
+      "date": "2027-05-05",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-06",
+      "title": "IB May examination session",
+      "date": "2027-05-06",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-07",
+      "title": "IB May examination session",
+      "date": "2027-05-07",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-10",
+      "title": "IB May examination session",
+      "date": "2027-05-10",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-11",
+      "title": "IB May examination session",
+      "date": "2027-05-11",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-12",
+      "title": "IB May examination session",
+      "date": "2027-05-12",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-13",
+      "title": "IB May examination session",
+      "date": "2027-05-13",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-14",
+      "title": "IB May examination session",
+      "date": "2027-05-14",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-17",
+      "title": "IB May examination session",
+      "date": "2027-05-17",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
+    },
+    {
+      "id": "ib-may-2027-05-18",
+      "title": "IB May examination session",
+      "date": "2027-05-18",
+      "kind": "exam",
+      "session": "May 2027",
+      "official": true,
+      "source": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "note": "Published IB examination day. Open the timetable for subject papers, session, and duration; confirm your own timetable with your coordinator."
     }
   ],
   "sources": [
@@ -159,14 +339,31 @@
       "url": "",
       "status": "verified",
       "checkedAt": "2026-09-09T21:49:50.084Z",
-      "message": "2026-2027 school days off. Half-days remain school days."
+      "message": "Official school-calendar days off. Half-days remain school days."
     },
     {
       "name": "IB examination schedule",
       "url": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
-      "status": "needs-review",
-      "message": "The official IB source could not be refreshed. Previously verified dates are retained; confirm the current timetable with your coordinator.",
-      "attemptedAt": "2026-09-09T21:49:50.084Z"
+      "status": "cross-verified",
+      "checkedAt": "2026-09-09T22:23:29.983Z",
+      "message": "May 2027 final timetable cross-verified: 3 of 3 independent IB-school copies agree on every exam day. Confirm your registered papers, exam zone, and start times with your coordinator.",
+      "references": [
+        {
+          "name": "MHS IB",
+          "url": "https://mhsib.weebly.com/uploads/1/3/8/5/138557084/may_2027_final_examination_schedule.pdf",
+          "status": "agrees"
+        },
+        {
+          "name": "Gymnázium Šrobárova",
+          "url": "https://www.srobarka.sk/diploma-programme-exam-calendar/",
+          "status": "agrees"
+        },
+        {
+          "name": "Holy Heart of Mary High School",
+          "url": "https://hhm.nlesd.ca/ib/ib-seniors-info",
+          "status": "agrees"
+        }
+      ]
     }
   ]
 }

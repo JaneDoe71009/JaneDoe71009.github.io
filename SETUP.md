@@ -7,7 +7,7 @@ The site is ready for a GitHub **user site**, such as `https://your-github-usern
 - Blue-and-white light and dark themes; 13 pages with all six DP subject groups and separate EE, TOK, and CAS pages.
 - Personal events, subject favorites, calendar filters, calendar export, and private countdowns displaying days, hours, minutes, and seconds, with independent weekend, holiday, and day-off settings. Target times use Eastern time; excluded days pause the clock. Existing date-only countdowns target midnight at the start of their selected date, without rewriting saved plans.
 - Email sign-in, review queues, resources, study tips, discussions, replies, reports, and owner/admin controls once the database is connected.
-- A weekly GitHub calendar refresh that discovers each new school-year document. Unreadable or unpublished sources are flagged, never filled with guessed dates.
+- A weekly GitHub calendar refresh that discovers each new school-year document. When the official IB hub has not posted the current timetable, the updater can use a configured set of independent IB-school copies only after at least two agree on every parsed exam day. Unreadable, unpublished, or conflicting sources are flagged, never filled with guessed dates.
 
 ## 1. Connect your own Supabase project
 
@@ -52,7 +52,7 @@ GitHub schedules can be delayed, and public repositories with no activity may ha
 - Test with two separate student accounts and one additional admin in your real project. Verify new signup starts a session immediately without an email, pending dates are invisible publicly, tips/forums publish immediately, and password sign-in works. When recovery email delivery is available, check that a valid recovery link opens the new-password form and an expired link cannot change a password.
 - Confirm additional admins cannot read reports or look up identities. Only the owner can do either through the website. Never make student moderators Supabase project collaborators.
 - Confirm private plans stay separate across accounts. Device-only plans remain on that browser; they are not automatically uploaded when someone signs in.
-- Check the calendar's source status. The current 2026–2027 no-school dates were verified. The IB source rejected the automated request, so May 2027 dates have not been invented. Confirm the final subject/session timetable with the school coordinator.
+- Check the calendar's source status. The current 2026–2027 no-school dates were verified. The May 2027 final timetable is currently cross-verified against three independently hosted IB-school copies because the official IB hub does not expose that year to the updater. All three copies match exactly, but students must still confirm their papers, zone, and start times with the school coordinator.
 - Review the community/privacy page and the moderation rules. A word filter catches some explicit terms, not every form of abuse; owner reports and human moderation remain necessary. Add blocked terms in the private database table if needed.
 
 ## Privacy and limits

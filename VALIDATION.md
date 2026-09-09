@@ -2,11 +2,11 @@
 
 ## Completed locally
 
-- 39 automated checks passed on September 8, 2026, including seven live-countdown checks for minute/second precision, target time, legacy plans, excluded dates, and Eastern daylight-saving transitions. The 32 existing auth/calendar/database checks also passed. Auth calls are mocked; no live test emails or test accounts were created by the tests.
+- 41 automated checks passed on September 9, 2026, including calendar-source consensus and spaced PDF date parsing, plus live-countdown checks for minute/second precision, target time, legacy plans, excluded dates, and Eastern daylight-saving transitions. Auth calls are mocked; no live test emails or test accounts were created by the tests.
 - TypeScript check passed.
 - Production static export passed: 13 working app pages plus a not-found page.
 - All 337 local page/asset references in the exported pages resolved to files. The publishing preparation step repeats this check.
-- The live current-year school calendar was fetched and parsed successfully. The IB source returned HTTP 403; the site flags the unavailable refresh and does not invent an exam schedule.
+- The live current-year school calendar was fetched and parsed successfully. The official IB hub returned HTTP 403, so the May 2027 final timetable was checked through three independent IB-school hosts. All three downloads were byte-for-byte identical and produced the same 18 exam days, from April 23 through May 18. The updater requires at least two matching parsed schedules and retains the previous snapshot if no majority exists.
 - Navy/light-blue/white theme tokens are applied to both modes. Native page links support static GitHub Pages navigation without a dynamic routing server.
 - A cold-preview calendar import failure was fixed by moving the canonical official calendar JSON from the static public folder into `lib`; the refresh script and publishing workflow follow the same file. Its dates were unchanged. Production export, types, and all 39 tests passed again. The signed-in calendar was then observed rendering the existing Freedom countdown with days, hours, minutes, and seconds; no saved plan was changed during this check.
 

@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {countdownDays,todayISO,validDate,calendarICS,readSavedPlan,emptyPlan} from '../lib/domain.ts';
-import {academicYear,discoverDistrict,discoverExams,parseDistrict,parseExams} from './calendar-sources.mjs';
+import {academicYear,discoverDistrict,discoverExams,parseDistrict,parseExams,chooseExamConsensus,examFingerprint} from './calendar-sources.mjs';
 const c={id:'test',title:'Target',date:'2026-09-08',includeWeekends:true,includeHolidays:true,includeDaysOff:true,extraDaysOff:[]};
 const events=[{id:'1',title:'Labor Day',date:'2026-09-07',kind:'holiday'},{id:'2',title:'No school',date:'2026-09-04',kind:'day-off'}];
 test('Countdown date boundaries and exclusion combinations',()=>{
@@ -35,7 +35,24 @@ test('Calendar discovery rolls over each July without guessing document URLs',()
 });
 test('Unknown document formats fail instead of publishing invented dates',()=>{
  assert.throws(()=>parseDistrict(['Calendar coming soon'],[2026,2027]),/format changed/);
- assert.throws(()=>parseExams(['Exam dates to be confirmed'],2027,'https://ibo.org/'),/format changed/);
+ assert.throws(()=>parseExams(['Exam dates to be confirmed'],2027,'https://ibo.org/'),/not the expected/);
+});
+test('IB timetable copies require a semantic majority match',()=>{
+ const make=dates=>dates.map(date=>({date}));
+ const a={source:{name:'A'},events:make(['2027-04-26','2027-05-19'])};
+ const b={source:{name:'B'},events:make(['2027-05-19','2027-04-26'])};
+ const c={source:{name:'C'},events:make(['2027-04-27','2027-05-19'])};
+ assert.equal(examFingerprint(a.events),examFingerprint(b.events));
+ assert.deepEqual(chooseExamConsensus([a,b,c]).agreement.map(result=>result.source.name),['A','B']);
+ assert.deepEqual(chooseExamConsensus([a,b,{source:{name:'C'},error:'unavailable'}]).events,a.events);
+ assert.throws(()=>chooseExamConsensus([a,c,{source:{name:'C'},error:'unavailable'}]),/majority match/);
+});
+test('IB timetable parsing handles spaced PDF date digits',()=>{
+ const headings=['Friday 2 3 April','Monday 2 6 April','Tuesday 2 7 April','Wednesday 2 8 April','Thursday 29 April','Friday 30 April','Monday 3 May','Tuesday 4 May','Wednesday 5 May','Thursday 6 May'];
+ const events=parseExams(['May 2027 examination schedule','FINAL VERSION','All exam zones (A, B, C)',...headings],2027,'https://ibo.org/');
+ assert.equal(events.length,10);
+ assert.equal(events[0].date,'2027-04-23');
+ assert.equal(events.at(-1).date,'2027-05-06');
 });
 test('Saved plan data is checked before rendering or overwriting',()=>{
  assert.deepEqual(readSavedPlan({}),emptyPlan);
