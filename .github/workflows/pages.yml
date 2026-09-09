@@ -1,0 +1,71 @@
+name: Publish IB Info
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '37 10 * * 1'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: ib-info-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the GitHub site address
+        env:
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
+          ACCOUNT_NAME: ${{ github.repository_owner }}
+        run: |
+          if [ "${REPOSITORY_NAME,,}" != "${ACCOUNT_NAME,,}.github.io" ]; then
+            echo "This site is configured for an account.github.io repository."
+            exit 1
+          fi
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Refresh official calendars
+        env:
+          SCHOOL_CALENDAR_URL: ${{ vars.SCHOOL_CALENDAR_URL }}
+          SCHOOL_CALENDAR_ALLOWED_HOSTS: ${{ vars.SCHOOL_CALENDAR_ALLOWED_HOSTS }}
+        run: node scripts/sync-calendar.mjs
+      - name: Keep the last verified calendar
+        if: github.event_name != 'pull_request'
+        run: |
+          if ! git diff --quiet -- lib/official-calendar.json; then
+            git config user.name "IB Info calendar updater"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add lib/official-calendar.json
+            git commit -m "Refresh official calendar sources"
+            git push
+          fi
+      - run: pnpm test
+      - run: pnpm exec tsc --noEmit
+      - name: Build for GitHub Pages
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
+        run: pnpm build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,172 @@
+{
+  "schoolYear": "2026-2027",
+  "checkedAt": "2026-09-05T03:16:06.920Z",
+  "coverageStart": "2026-08-24",
+  "coverageEnd": "2027-06-04",
+  "events": [
+    {
+      "id": "school-93c99dabec337056",
+      "date": "2026-08-18",
+      "title": "Staff professional development",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-402b250107e81b3e",
+      "date": "2026-08-19",
+      "title": "Staff professional development",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-cdd43e2cadc1c4ab",
+      "date": "2026-09-04",
+      "title": "No school",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-90d9c478ab5c8bdf",
+      "date": "2026-09-07",
+      "title": "Labor Day",
+      "kind": "holiday",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-fd596c96331f83aa",
+      "date": "2026-11-03",
+      "title": "Election Day: Staff professional development",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-9470d727b04ff1cf",
+      "date": "2026-11-26",
+      "title": "Thanksgiving Day",
+      "kind": "holiday",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-407c278719ff4575",
+      "date": "2026-11-27",
+      "title": "No school",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-7a799b33e6bdbc5e",
+      "date": "2026-12-21",
+      "endDate": "2026-12-24",
+      "title": "Winter Break",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-08ef751ded0afde6",
+      "date": "2026-12-25",
+      "title": "Christmas Day — winter break",
+      "kind": "holiday",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-8d691fb174a04814",
+      "date": "2026-12-26",
+      "endDate": "2026-12-31",
+      "title": "Winter Break",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-8311159eba6fd0db",
+      "date": "2027-01-01",
+      "title": "New Years Day",
+      "kind": "holiday",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-17b075141ca1a261",
+      "date": "2027-01-18",
+      "title": "Staff professional development",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-763b672873d0a1a0",
+      "date": "2027-02-15",
+      "title": "No school",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-37d763d7e17e6c2b",
+      "date": "2027-03-12",
+      "title": "Staff professional development",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-c7d11a5c4361e756",
+      "date": "2027-03-26",
+      "title": "Good Friday",
+      "kind": "holiday",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-fe85378cdd1716e1",
+      "date": "2027-03-29",
+      "endDate": "2027-03-31",
+      "title": "Spring Break",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-f6daeff29f04cdb2",
+      "date": "2027-04-01",
+      "endDate": "2027-04-02",
+      "title": "Spring Break",
+      "kind": "day-off",
+      "official": true,
+      "note": "Official school calendar"
+    },
+    {
+      "id": "school-4f73ee55d8e9fe0c",
+      "date": "2027-05-31",
+      "title": "Memorial Day",
+      "kind": "holiday",
+      "official": true,
+      "note": "Official school calendar"
+    }
+  ],
+  "sources": [
+    {
+      "name": "School calendar",
+      "url": "",
+      "status": "verified",
+      "checkedAt": "2026-09-05T03:16:06.920Z",
+      "message": "2026-2027 school days off. Half-days remain school days."
+    },
+    {
+      "name": "IB examination schedule",
+      "url": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
+      "status": "needs-review",
+      "message": "The official IB source could not be refreshed. Previously verified dates are retained; confirm the current timetable with your coordinator.",
+      "attemptedAt": "2026-09-05T03:16:06.920Z"
+    }
+  ]
+}
