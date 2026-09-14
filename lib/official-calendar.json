@@ -1,6 +1,6 @@
 {
   "schoolYear": "2026-2027",
-  "checkedAt": "2026-09-09T22:23:29.983Z",
+  "checkedAt": "2026-09-14T16:29:08.915Z",
   "coverageStart": "2026-08-24",
   "coverageEnd": "2027-06-04",
   "events": [
@@ -338,14 +338,14 @@
       "name": "School calendar",
       "url": "",
       "status": "verified",
-      "checkedAt": "2026-09-09T21:49:50.084Z",
-      "message": "Official school-calendar days off. Half-days remain school days."
+      "checkedAt": "2026-09-14T16:29:08.915Z",
+      "message": "2026-2027 school days off. Half-days remain school days."
     },
     {
       "name": "IB examination schedule",
       "url": "https://ibo.org/programmes/diploma-programme/assessment-and-exams/exam-schedule/",
       "status": "cross-verified",
-      "checkedAt": "2026-09-09T22:23:29.983Z",
+      "checkedAt": "2026-09-14T16:29:08.915Z",
       "message": "May 2027 final timetable cross-verified: 3 of 3 independent IB-school copies agree on every exam day. Confirm your registered papers, exam zone, and start times with your coordinator.",
       "references": [
         {
